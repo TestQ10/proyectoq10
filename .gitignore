@@ -1,0 +1,17 @@
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+node_modules/
+bower_components/
+*.log
+*.min.js
+*.min.css
+*.bak
+*.swp
+*.tmp
+.cache/
+build/
+dist/
+.env
+*.log
