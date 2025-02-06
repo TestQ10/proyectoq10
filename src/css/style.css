@@ -24,6 +24,7 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 1.5em;
     padding: 15px;
     background-color: var(--background);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -38,7 +39,7 @@ li {
 .menu-toggle {
     background: var(--background);
     border: none;
-    font-size: 24px;
+    font-size: 2em;
     cursor: pointer;
     display: block;
     color: var(--colorOrange);
@@ -66,7 +67,6 @@ li {
 .nav-links a {
     text-decoration: none;
     color: var(--colorText);
-    font-size: 18px;
     display: block;
 }
 
@@ -87,14 +87,14 @@ li {
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 1.9em;
     color: var(--colorText);
     margin-bottom: 50px;
     margin-top: -120px;
 }
 
 .intro p {
-    font-size: 18px;
+    font-size: 1.5em;
     color: var(--colorText);
     margin-bottom: 20px;
 }
@@ -116,7 +116,7 @@ button {
     color: white;
     border: none;
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 1.5em;
     cursor: pointer;
 }
 
@@ -239,33 +239,6 @@ footer .copy {
     padding-bottom: 50px;
 }
 
-@media (min-width: 768px) {
-    .menu-toggle {
-        display: none;
-    }
-
-    .nav-links {
-        position: static;
-        display: flex;
-        flex-direction: row;
-        width: auto;
-        box-shadow: none;
-    }
-
-    .nav-links li {
-        padding: 0 15px;
-    }
-
-    .intro {
-        flex-direction: row;
-        text-align: left;
-    }
-
-    .intro figure {
-        display: block;
-    }
-}
-
 /*Estilos para el formulario emergente*/
 .popup-container {
     display: none;
@@ -321,4 +294,137 @@ footer .copy {
 
 .popup button:hover {
     background: var(--colorOrange);
+}
+
+
+/*Media queries*/
+@media (min-width: 768px) {
+
+    .nav-menu {
+        padding: 30px;
+    }
+
+    .nav-menu figure img {
+        height: 80px;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-links {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        box-shadow: none;
+        background-color: var(--background);
+    }
+
+    .nav-links li {
+        padding: 0 15px;
+    }
+
+    .intro {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 80px 50px;
+        font-size: 1.2em;
+    }
+
+    .intro article {
+        width: 60%;
+        margin-top: 100px;
+    }
+
+    .intro .introFig img {
+        display: none;
+    }
+
+    .intro .partner {
+        display: block;
+        margin-left: 50px;
+    }
+
+    .intro .partner img {
+        width: 450px;
+    }
+
+    .benefits {
+        margin: 50px 20px;
+        font-size: 2.5em;
+    }
+
+    .benefits h2 {
+        margin: 50px;
+    }
+
+    .card {
+        height: 180px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .card img {
+        width: 90px;
+        height: 90px;
+        margin-left: 40px;
+    }
+
+    .card div {
+        width: 80%;
+        margin: 0 20px;
+        font-size: 1.2em;
+    }
+
+    .cta div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 50px;
+    }
+
+    .cta article{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: space-between;
+        font-size: 1.7em;
+    }
+
+    .cta img:first-child {
+        width: 400px;
+    }
+
+    .cta article div {
+        flex-direction: column;
+    }
+
+    .cta .figCta img {
+        margin-top: -50px;
+        width: 100%;
+    }
+
+    .close-btn {
+        left: 280px;
+        top: 140px;
+    }
+
+    footer {
+        font-size: 1.4em;
+    }
+
+    #copy{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 30px;
+    }
+
+    #copy p {
+        padding: 20px 0;
+    }
+
 }
