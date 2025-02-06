@@ -3,27 +3,29 @@ function toggleMenu() {
   navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
 
   if (navLinks.style.display === "flex") {
-    navLinks.addEventListener('click', function hideOnClick() {
+    navLinks.addEventListener("click", function hideOnClick() {
       navLinks.style.display = "none";
-      navLinks.removeEventListener('click', hideOnClick); 
+      navLinks.removeEventListener("click", hideOnClick);
     });
   }
 }
 
-function hideSections() {
-  const sections = document.querySelectorAll('main section');
-  sections.forEach(section => {
-    section.style.display = 'none';
-  });
-}
-
 function showSection(sectionId) {
-  hideSections();
   const section = document.getElementById(sectionId);
-  section.style.display = 'block'; 
+  if (section) {
+    section.style.display = "block";
+    section.scrollIntoView({ behavior: "smooth" });
+  }
 }
 
-function openPopup() {
+/*document.getElementById('openIntro').addEventListener('click', function() {
+  console.log('openIntro');
+  openPopup(); 
+});*/
+
+function openPopup(e) {
+  e.preventDefault();
+  console.log('openPopup');
   document.getElementById("popup").style.display = "flex";
 }
 
@@ -31,14 +33,11 @@ function closePopup() {
   document.getElementById("popup").style.display = "none";
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  showSection('intro'); 
-  const buttons = document.querySelectorAll("button");
-  buttons.forEach(button => {
-    if (button.textContent.includes("¡Afíliate ahora!")) {
-      button.addEventListener("click", openPopup);
-    }
-  });
+document.querySelectorAll('.open').forEach(button => {
+  console.log('button', button);
+  button.addEventListener('click', openPopup);
 });
 
-
+document.addEventListener("DOMContentLoaded", () => {
+  showSection("intro");
+});
